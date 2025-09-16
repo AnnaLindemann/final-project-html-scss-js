@@ -1,0 +1,11 @@
+@use "global";
+@use "reset";
+
+@use "variables/colors";
+@use "variables/typography";
+@use "mixins/mixin";
+
+@use "components/nav";
+@use "components/footer";
+@use "sections/mainPage";
+@use "sections/events";

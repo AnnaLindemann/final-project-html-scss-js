@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a class="navBrand" href="/">
+          <img src="/assets/icons/meetupLogo.svg" alt="Logo" />
+        </a>
+
+        <form class="navSearch" role="search">
+          <div class="searchBox">
+            <img
+              class="searchBoxIcon"
+              src="/assets/icons/lupaGrey.svg"
+              alt="Search"
+            />
+            <input class="search" type="search" placeholder="Search events" />
+          </div>
+          <div class="place">
+            <input
+              class="inputPlace"
+              type="text"
+              placeholder="Mountain View, CA"
+            />
+            <button class="btnPlace" type="submit" class="iconBtn">
+              <img
+                class="icon"
+                src="/assets/icons/lupa.svg"
+                alt="Search place"
+              />
+            </button>
+          </div>
+        </form>
+        <div class="navActions">
+          <button class="pill" type="button">
+            <img src="/assets/icons/globusLang.svg" alt="Globe" /> English
+          </button>
+          <a class="navLink" href="#login">Log in</a>
+
+          <button class="navSign" type="button">Sign up</button>
+        </div>
+      </nav>
+    </header>
+  </body>
+  <script src="/scripts/script.js"></script>
+</html>

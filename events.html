@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <include-html src="partials/nav.html"></include-html>
+
+    <main class="app">
+      <div class="events">
+        <h1 class="eventsNY">Events near New York, NY</h1>
+        <h2 class="titleEvent">Events</h2>
+        <section class="filtersContainer">
+          <div class="eventType"></div>
+          <div class="eventDistance"></div>
+          <div class="eventCategory"></div>
+          <div class="eventDate"></div>
+        </section>
+        <section id="eventsList" class="events"></section>
+      </div>
+      <div class="map">
+        <p class="findEvent">Find events near</p>
+        <h2 class="NewYork">New York, NY</h2>
+        <div id="mapNY" aria-label="Events map"></div>
+      </div>
+    </main>
+    <include-html src="partials/footer.html"></include-html>
+  </body>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="scripts/script.js" defer></script>
+</html>

@@ -1,0 +1,21 @@
+@use "../variables/typography" as typo;
+@mixin text-style($name) {
+  $style: map-get(typo.$textStyles, $name);
+
+  font-size: clamp(
+    map-get($style, min),
+    calc(map-get($style, min) + 1vw),
+    map-get($style, max)
+  );
+
+  font-weight: map-get(typo.$fontWeights, map-get($style, weight-mobile));
+
+  @media (min-width: 768px) {
+    font-weight: map-get(typo.$fontWeights, map-get($style, weight-desktop));
+  }
+}
+
+@mixin flex-container($direction) {
+  display: flex;
+  flex-direction: $direction;
+}

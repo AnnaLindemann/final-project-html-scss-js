@@ -1,0 +1,179 @@
+@use "../variables/typography" as *;
+@use "../mixins/mixin" as *;
+@use "../variables/colors" as *;
+@use "../variables/spacing" as *;
+
+.app {
+  @include flex-container(row);
+  width: 100%;
+}
+
+//================= event area =============//
+
+.eventsNY {
+  @include text-style(variant8);
+  color: $mainFontAndFooterColor;
+  padding: 1rem 0 0.5rem 0.5rem;
+}
+
+.titleEvent {
+  color: $primaryColor;
+  font-weight: 1.25rem;
+  font-size: medium;
+  padding: 0.5rem;
+  text-decoration: underline;
+}
+//========================= filter inputs ==================//
+
+.filtersContainer {
+  width: 100%;
+  max-width: 375px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-gutter: stable both-edges;
+  -webkit-overflow-scrolling: touch;
+  gap: 0.5rem;
+  padding: 0.4rem;
+  scrollbar-gutter: stable;
+  margin-bottom: 1.5rem;
+}
+
+.filtersContainer > * {
+  flex: 0 0 auto;
+}
+
+.filtersContainer {
+  padding-bottom: 0.5rem;
+  scrollbar-gutter: stable;
+}
+
+.filter {
+  border-radius: 0.8rem;
+  background-color: $backgroundFilters;
+  padding: 0.5rem 0.75rem;
+  white-space: nowrap;
+}
+//================== scrollbar ===========================//
+
+.filtersContainer::-webkit-scrollbar {
+  height: 1rem;
+}
+.filtersContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+}
+.filtersContainer::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 999px;
+}
+
+.filtersContainer {
+  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.06);
+  scrollbar-width: thin;
+}
+//================== render cards area =====================//
+
+.eventCard {
+  @include flex-container(row);
+  align-items: stretch;
+  margin: 0.5rem;
+  border-top: 1px solid rgba($dataEventFontColor, 0.4);
+  max-width: 100%;
+  padding: 2rem 0;
+}
+.eventImageWrap {
+  width: 33%;
+  .eventImage {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $mainBorderRadius;
+  }
+}
+.eventText {
+  @include flex-container(column);
+  width: 67%;
+  padding: 0.5rem;
+  gap: 0.5rem;
+
+  .eventDateTime {
+    @include text-style(variant4);
+    text-transform: uppercase;
+    color: $dataEventFontColor;
+  }
+  .eventTitle {
+    @include text-style(variant7);
+  }
+  .eventCategoryType {
+    @include text-style(variant4);
+  }
+  .eventTypeLine {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    @include text-style(variant9);
+
+    .eventTypeLine .iconCam {
+      display: inline-flex;
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+  .eventTypeLine span {
+    line-height: 1;
+  }
+  .eventAttendees {
+    padding-top: 1.5rem;
+  }
+  .attendeesCount {
+    @include text-style(variant10);
+    padding-right: 1rem;
+  }
+  .spotsLeft {
+    @include text-style(variant10);
+    color: red;
+  }
+}
+//=================map area ================//
+.map {
+  display: none;
+}
+//================================ media area events ===========//
+@media (min-width: 376px) {
+  .filtersContainer {
+    min-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .app {
+    padding: $mainPadding;
+  }
+}
+@media (min-width: 1024px) {
+  .events {
+    min-width: 50%;
+  }
+  .filtersContainer {
+    min-width: fit-content;
+  }
+  .map {
+    @include flex-container(column);
+    min-width: 50%;
+    padding-left: 20%;
+  }
+  .findEvent {
+    @include text-style(variant10);
+    margin-bottom: 0.5rem;
+  }
+  .NewYork {
+    @include text-style(variant1);
+    margin-bottom: 1rem;
+  }
+
+  #mapNY {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 0.6rem;
+    overflow: hidden;
+  }
+}

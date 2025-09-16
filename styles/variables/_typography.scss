@@ -1,0 +1,79 @@
+$fontWeights: (
+  regular: 400,
+  medium: 500,
+  bold: 700,
+);
+$textStyles: (
+  variant1: (
+    min: 0.6rem,
+    max: 1.2rem,
+    weight-mobile: regular,
+    weight-desktop: medium,
+  ),
+
+  variant2: (
+    min: 0.7rem,
+    max: 1rem,
+    weight-mobile: regular,
+    weight-desktop: regular,
+  ),
+
+  variant3: (
+    min: 0.75rem,
+    max: 0.875rem,
+    weight-mobile: medium,
+    weight-desktop: medium,
+  ),
+
+  variant4: (
+    min: 0.56rem,
+    max: 0.875rem,
+    weight-mobile: medium,
+    weight-desktop: medium,
+  ),
+
+  variant5: (
+    min: 1.25rem,
+    max: 2.6rem,
+    weight-mobile: bold,
+    weight-desktop: bold,
+  ),
+
+  variant6: (
+    min: 0.875rem,
+    max: 1.25rem,
+    weight-mobile: medium,
+    weight-desktop: medium,
+  ),
+
+  variant7: (
+    min: 0.625rem,
+    max: 1rem,
+    weight-mobile: medium,
+    weight-desktop: medium,
+  ),
+  variant8: (
+    min: 1.25rem,
+    max: 1.56rem,
+    weight-mobile: medium,
+    weight-desktop: medium,
+  ),
+  variant9: (
+    min: 0.43rem,
+    max: 0.75rem,
+    weight-mobile: medium,
+    weight-desktop: medium,
+  ),
+  variant10: (
+    min: 0.56rem,
+    max: 0.875rem,
+    weight-mobile: regular,
+    weight-desktop: regular,
+  ),
+  variant11: (
+    min: 0.75rem,
+    max: 1.25rem,
+    weight-mobile: bold,
+    weight-desktop: bold,
+  ),
+);

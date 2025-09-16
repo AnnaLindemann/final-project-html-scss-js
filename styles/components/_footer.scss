@@ -1,0 +1,127 @@
+@use "../variables/typography" as *;
+@use "../mixins/mixin" as *;
+@use "../variables/colors" as *;
+@use "../variables/spacing" as *;
+
+.footerContainer {
+  background-color: $mainFontAndFooterColor;
+  padding: 0 1.5rem;
+}
+//============= Group area ===========//
+.createGroup {
+  @include flex-container(row);
+
+  color: $footerTitleFontColor;
+  @include text-style(variant1);
+  padding-top: 2rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.groupBtn {
+  border: 2px solid $footerTitleFontColor;
+  background-color: $mainFontAndFooterColor;
+  padding: 0.5rem;
+  color: $footerTitleFontColor;
+  border-radius: $mainBorderRadius;
+  margin-right: 0.5rem;
+  @include text-style(variant1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.groupBtn:hover {
+  transform: translateY(-3px);
+  animation: pulseShadow 1s infinite;
+}
+
+//================================line area===========//
+.line {
+  display: inline-block;
+
+  width: 70%;
+  border: 1px solid rgba($footerTitleFontColor, 0.3);
+}
+//================================footer menu area===========//
+.footerMenu {
+  @include flex-container(row);
+  justify-content: space-around;
+
+  .title {
+    @include text-style(variant1);
+    color: $footerTitleFontColor;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .itemsMenu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    .itemLink {
+      text-decoration: none;
+      color: $footerFontColor;
+      @include text-style(variant2);
+      cursor: pointer;
+    }
+  }
+}
+//============= media area =================//
+
+.media {
+  @include flex-container(row);
+  width: 100%;
+  margin: 1rem;
+  justify-content: space-between;
+
+  .textFollowUs {
+    @include text-style(variant1);
+    color: $footerTitleFontColor;
+  }
+  .mediaLogos {
+    @include flex-container(row);
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0rem;
+  }
+}
+//============= store area =================//
+.store {
+  display: none;
+}
+//============= terms area =================//
+.terms {
+  padding: 1.5rem;
+  @include flex-container(row);
+
+  gap: 1.5rem;
+}
+.termsMenu {
+  display: none;
+}
+.year {
+  @include text-style(variant4);
+  color: $footerTitleFontColor;
+}
+//===================== media adaptaion============//
+@media (min-width: 768px) {
+  .line {
+    width: 90%;
+  }
+  .store {
+    display: inline-flex;
+    margin-right: clamp(4rem, 7.5vw, 89em);
+  }
+}
+
+@media (min-width: 1024px) {
+  .termsMenu {
+    display: inline-flex;
+    gap: 1.5rem;
+  }
+
+  .termsLink {
+    text-decoration: none;
+    color: $footerFontColor;
+    @include text-style(variant2);
+    cursor: pointer;
+  }
+}
